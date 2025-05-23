@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio Arsal Fahrulloh</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#facc15',
+          },
+        },
+      }
+    };
+  </script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold text-primary animate-pulse">Arsal</h1>
+      <nav class="space-x-4 text-sm">
+        <a href="#home" class="hover:text-primary transition">Home</a>
+        <a href="#keahlian" class="hover:text-primary transition">Keahlian</a>
+        <a href="#projek" class="hover:text-primary transition">Proyek</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="relative bg-gradient-to-br from-gray-900 to-black text-white py-24 px-4">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1549921296-3a6b59f8f5a0')] bg-cover bg-center opacity-10"></div>
+    <div class="relative z-10 max-w-4xl mx-auto text-center" data-aos="zoom-in">
+      <img src="https://fisika.uad.ac.id/wp-content/uploads/blank-profile-picture-973460_1280.png" alt="Foto Arsal" class="w-32 h-32 mx-auto rounded-full border-4 border-primary shadow-lg mb-6">
+      <h1 class="text-4xl font-bold mb-2">Halo, saya <span class="text-primary">Arsal</span></h1>
+      <p class="text-lg max-w-xl mx-auto">Seorang pengembang web & mobile yang berdedikasi, ahli dalam Laravel dan Flutter. Siap membantu Anda membangun solusi digital inovatif yang berdampak.</p>
+    </div>
+  </section>
+
+  <!-- Keahlian -->
+  <section id="keahlian" class="py-16 px-4 max-w-6xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center">Keahlian</h2>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="h-8 w-8">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/laravel/laravel-original.svg" class="h-8 w-8">
+        <span>PHP & Laravel</span>
+      </li>
+      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" class="h-8 w-8">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="h-8 w-8">
+        <span>Dart & Flutter</span>
+      </li>
+      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="h-8 w-8">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="h-8 w-8">
+        <span>Java & JavaScript</span>
+      </li>
+      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" class="h-8 w-8">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="h-8 w-8">
+        <span>Postman & Github</span>
+      </li>
+      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="h-8 w-8">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="h-8 w-8">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" class="h-8 w-8">
+        <span>HTML, CSS, Bootstrap</span>
+      </li>
+      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="h-8 w-8">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/firebase/firebase-plain.svg" class="h-8 w-8">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" class="h-8 w-8">
+        <span>MySQL, SQLite, Firebase</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Proyek -->
+  <section id="projek" class="py-16 px-4 max-w-6xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center">Proyek</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Ulangi struktur ini untuk semua proyek -->
+      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
+        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Manajemen Keuangan" class="rounded mb-4">
+        <h3 class="text-xl font-semibold mb-2 text-primary">Manajemen Keuangan</h3>
+        <p>Aplikasi Flutter offline (SQLite). Fitur: pemasukan, pengeluaran, cicilan, dan tabungan.</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
+        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Weather App" class="rounded mb-4">
+        <h3 class="text-xl font-semibold mb-2 text-primary">Weather Tracking App</h3>
+        <p>Menampilkan cuaca real-time menggunakan Laravel + Flutter.</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
+        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Chat App" class="rounded mb-4">
+        <h3 class="text-xl font-semibold mb-2 text-primary">Aplikasi Chat</h3>
+        <p>Real-time chat dibuat dengan Laravel dan Flutter.</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
+        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Social Media Clone" class="rounded mb-4">
+        <h3 class="text-xl font-semibold mb-2 text-primary">Social Media Clone</h3>
+        <p>Laravel + Blade. Fitur: follow, like, komentar, postingan, reels.</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
+        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Spotify Clone" class="rounded mb-4">
+        <h3 class="text-xl font-semibold mb-2 text-primary">Spotify Clone</h3>
+        <p>Laravel Web + Spotify API, tanpa login.</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
+        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Midtrans" class="rounded mb-4">
+        <h3 class="text-xl font-semibold mb-2 text-primary">Integrasi Midtrans</h3>
+        <p>Laravel & Flutter dengan sistem pembayaran online Midtrans.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center p-6 mt-12">
+    <p>© 2025 Arsal. Dirancang dengan dedikasi, kreativitas, dan keinginan untuk terus berkemban.</p>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
+</body>
+</html>
