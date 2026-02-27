@@ -1,132 +1,266 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portofolio Arsal Fahrulloh</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#facc15',
-          },
-        },
+<meta charset="UTF-8">
+<title>Arsal Fahrulloh | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#22d3ee',
+        dark: '#0f172a',
+        card: '#1e293b'
       }
-    };
-  </script>
+    }
+  }
+}
+</script>
+
+<style>
+html { scroll-behavior:smooth; }
+
+.glow:hover { box-shadow: 0 0 25px rgba(34,211,238,.6); }
+.card-hover:hover { transform: translateY(-8px) scale(1.03); }
+.nav-active { color:#22d3ee; border-bottom:2px solid #22d3ee; }
+
+.btn-glow:hover {
+  box-shadow:0 0 20px rgba(34,211,238,.7);
+  transform:scale(1.05);
+}
+
+.float { animation: float 4s ease-in-out infinite; }
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+</style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
 
-  <!-- Header -->
-  <header class="bg-gray-800 p-4 shadow-md sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold text-primary animate-pulse">Arsal</h1>
-      <nav class="space-x-4 text-sm">
-        <a href="#home" class="hover:text-primary transition">Home</a>
-        <a href="#keahlian" class="hover:text-primary transition">Keahlian</a>
-        <a href="#projek" class="hover:text-primary transition">Proyek</a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-dark text-gray-200">
 
-  <!-- Home Section -->
-  <section id="home" class="relative bg-gradient-to-br from-gray-900 to-black text-white py-24 px-4">
-    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1549921296-3a6b59f8f5a0')] bg-cover bg-center opacity-10"></div>
-    <div class="relative z-10 max-w-4xl mx-auto text-center" data-aos="zoom-in">
-      <img src="IMG_20241009_170539_547-removebg-preview.jpg" alt="Foto Arsal" class="w-32 h-32 mx-auto rounded-full border-4 border-primary shadow-lg mb-6">
-      <h1 class="text-4xl font-bold mb-2">Halo, saya <span class="text-primary">Arsal</span></h1>
-      <p class="text-lg max-w-xl mx-auto">Seorang pengembang web & mobile yang berdedikasi, ahli dalam Laravel dan Flutter. Siap membantu Anda membangun solusi digital inovatif yang berdampak.</p>
-    </div>
-  </section>
+<!-- NAVBAR -->
+<header class="fixed w-full bg-dark/80 backdrop-blur z-50">
+<div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+<h1 class="text-xl font-bold text-primary">Arsal</h1>
 
-  <!-- Keahlian -->
-  <section id="keahlian" class="py-16 px-4 max-w-6xl mx-auto" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-8 text-center">Keahlian</h2>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="h-8 w-8">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/laravel/laravel-original.svg" class="h-8 w-8">
-        <span>PHP & Laravel</span>
-      </li>
-      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" class="h-8 w-8">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="h-8 w-8">
-        <span>Dart & Flutter</span>
-      </li>
-      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="h-8 w-8">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="h-8 w-8">
-        <span>Java & JavaScript</span>
-      </li>
-      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" class="h-8 w-8">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="h-8 w-8">
-        <span>Postman & Github</span>
-      </li>
-      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="h-8 w-8">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="h-8 w-8">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" class="h-8 w-8">
-        <span>HTML, CSS, Bootstrap</span>
-      </li>
-      <li class="bg-gray-800 p-4 rounded-xl flex items-center space-x-4 shadow-lg hover:scale-105 transition">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="h-8 w-8">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/firebase/firebase-plain.svg" class="h-8 w-8">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" class="h-8 w-8">
-        <span>MySQL, SQLite, Firebase</span>
-      </li>
-    </ul>
-  </section>
+<!-- Desktop Menu -->
+<nav id="navbar" class="space-x-6 hidden md:block">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#education">Education</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
 
-  <!-- Proyek -->
-  <section id="projek" class="py-16 px-4 max-w-6xl mx-auto" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-8 text-center">Proyek</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Ulangi struktur ini untuk semua proyek -->
-      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Manajemen Keuangan" class="rounded mb-4">
-        <h3 class="text-xl font-semibold mb-2 text-primary">Manajemen Keuangan</h3>
-        <p>Aplikasi Flutter offline (SQLite). Fitur: pemasukan, pengeluaran, cicilan, dan tabungan.</p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Weather App" class="rounded mb-4">
-        <h3 class="text-xl font-semibold mb-2 text-primary">Weather Tracking App</h3>
-        <p>Menampilkan cuaca real-time menggunakan Laravel + Flutter.</p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Chat App" class="rounded mb-4">
-        <h3 class="text-xl font-semibold mb-2 text-primary">Aplikasi Chat</h3>
-        <p>Real-time chat dibuat dengan Laravel dan Flutter.</p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Social Media Clone" class="rounded mb-4">
-        <h3 class="text-xl font-semibold mb-2 text-primary">Social Media Clone</h3>
-        <p>Laravel + Blade. Fitur: follow, like, komentar, postingan, reels.</p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Spotify Clone" class="rounded mb-4">
-        <h3 class="text-xl font-semibold mb-2 text-primary">Spotify Clone</h3>
-        <p>Laravel Web + Spotify API, tanpa login.</p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Midtrans" class="rounded mb-4">
-        <h3 class="text-xl font-semibold mb-2 text-primary">Integrasi Midtrans</h3>
-        <p>Laravel & Flutter dengan sistem pembayaran online Midtrans.</p>
-      </div>
-    </div>
-  </section>
+<!-- Mobile Button -->
+<button id="menuBtn" class="md:hidden text-primary text-2xl">
+☰
+</button>
+</div>
+</header>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-center p-6 mt-12">
-    <p>© 2025 Arsal. Dirancang dengan dedikasi, kreativitas, dan keinginan untuk terus berkemban.</p>
-  </footer>
+<!-- MOBILE SIDEBAR -->
+<div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full bg-dark z-50 transform translate-x-full transition-transform duration-300 shadow-xl">
+<div class="p-6 space-y-4">
+<button id="closeBtn" class="text-primary text-xl mb-4">✕</button>
+<a href="#home" class="block">Home</a>
+<a href="#about" class="block">About</a>
+<a href="#skills" class="block">Skills</a>
+<a href="#experience" class="block">Experience</a>
+<a href="#education" class="block">Education</a>
+<a href="#projects" class="block">Projects</a>
+<a href="#contact" class="block">Contact</a>
+</div>
+</div>
 
-  <script>
-    AOS.init({ duration: 1000 });
-  </script>
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-dark to-black pt-24">
+<div data-aos="zoom-in">
+<img src="IMG_20241009_170539_547-removebg-preview.jpg" class="w-36 h-36 rounded-full border-4 border-primary mx-auto mb-6 glow float">
+<h2 class="text-4xl font-bold">Arsal Fahrulloh</h2>
+<p class="text-primary mt-2 text-lg">Fullstack Web & Mobile Developer</p>
+<p class="max-w-xl mx-auto mt-4">
+Fullstack Developer specializing in Laravel and Flutter, experienced in building scalable RESTful APIs, real-time systems, and payment integrations.
+</p>
+<a href="#projects" class="inline-block mt-6 bg-primary text-dark px-6 py-2 rounded-full font-semibold btn-glow transition">View Projects</a>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 max-w-5xl mx-auto px-4" data-aos="fade-up">
+<h2 class="text-3xl font-bold text-primary mb-6">About Me</h2>
+<p>
+I am a Fullstack Developer with strong experience in developing end-to-end web and mobile applications. 
+I specialize in Laravel and Flutter, and I am highly familiar with RESTful API development, JWT authentication, Firebase Cloud Messaging, and scalable system design using Microservices and Event-Driven Architecture.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-20 bg-black/30">
+<h2 class="text-3xl font-bold text-center text-primary mb-10">Skills</h2>
+<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+<div class="bg-card p-6 rounded-xl glow card-hover transition" data-aos="fade-up">
+<h3 class="font-bold mb-2">Backend</h3>
+<p>Laravel, REST API, JWT, OAuth, Event & Listener, Job Queue, Scheduler, Microservices</p>
+</div>
+<div class="bg-card p-6 rounded-xl glow card-hover transition" data-aos="fade-up">
+<h3 class="font-bold mb-2">Mobile</h3>
+<p>Flutter, MVVM, API Integration, Firebase, Audio & Video Player</p>
+</div>
+<div class="bg-card p-6 rounded-xl glow card-hover transition" data-aos="fade-up">
+<h3 class="font-bold mb-2">Database & Tools</h3>
+<p>MySQL, PostgreSQL, SQLite, Docker, GitHub, Postman</p>
+</div>
+<div class="bg-card p-6 rounded-xl glow card-hover transition" data-aos="fade-up">
+<h3 class="font-bold mb-2">Integrations</h3>
+<p>Midtrans, Xendit, iPaymu, PPOB IAK API, Amadeus API, Google Maps API, Meta Ads API</p>
+</div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="py-20 max-w-5xl mx-auto px-4">
+<h2 class="text-3xl font-bold text-primary mb-10 text-center">Experience</h2>
+<div class="bg-card p-6 rounded-xl glow card-hover transition" data-aos="fade-right">
+<h3 class="text-primary font-bold text-xl">Fullstack Web & Mobile Developer</h3>
+<p class="text-sm text-gray-400">PT Multipro Global Mandiri | 2025 – Present</p>
+<ul class="list-disc ml-5 mt-4 space-y-2">
+<li>Developed RESTful APIs using Laravel for Flutter mobile applications</li>
+<li>Implemented scalable microservices architecture</li>
+<li>Integrated payment gateways (Midtrans, Xendit, iPaymu)</li>
+<li>Implemented OAuth login (Google, Facebook, GitHub)</li>
+<li>Built real-time systems using Events, Job Queue, and FCM</li>
+<li>Integrated third-party APIs (PPOB IAK, Amadeus, Google Maps, Meta Ads)</li>
+<li>Designed and managed MySQL & PostgreSQL databases</li>
+</ul>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="py-20 max-w-5xl mx-auto px-4">
+<h2 class="text-3xl font-bold text-primary mb-10 text-center">Education</h2>
+
+<div class="bg-card p-6 rounded-xl glow card-hover transition" data-aos="fade-left">
+<h3 class="font-bold text-lg">Bachelor of Informatics Engineering</h3>
+<p class="text-gray-400">Universitas Teknologi Bandung (Online Employee Class)</p>
+<p class="text-sm">2025 – Present</p>
+</div>
+
+<div class="bg-card p-6 rounded-xl glow card-hover transition mt-6" data-aos="fade-right">
+<h3 class="font-bold text-lg">Software Engineering (RPL)</h3>
+<p class="text-gray-400">SMK Mahardhika Batujajar</p>
+<p class="text-sm">2021 – 2024</p>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-20 max-w-6xl mx-auto px-4">
+<h2 class="text-3xl font-bold text-center text-primary mb-10">Featured Projects</h2>
+
+<div class="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
+
+<!-- MyChatApp -->
+<div class="bg-card rounded-xl overflow-hidden glow card-hover transition" data-aos="fade-left">
+  <div class="bg-black/40 flex items-center justify-center aspect-[16/9]">
+    <img src="chat.png" class="max-h-full max-w-full object-contain">
+  </div>
+  <div class="p-4">
+    <h3 class="text-primary font-bold">MyChatApp</h3>
+    <p>Real-time chat application using Laravel & Flutter, JWT Authentication, Job Queue, and FCM.</p>
+  </div>
+</div>
+
+<!-- Audyx -->
+<div class="bg-card rounded-xl overflow-hidden glow card-hover transition" data-aos="fade-right">
+  <div class="bg-black/40 flex items-center justify-center aspect-[16/9]">
+    <img src="musik.png" class="max-h-full max-w-full object-contain">
+  </div>
+  <div class="p-4">
+    <h3 class="text-primary font-bold">Audyx</h3>
+    <p>Music streaming platform with premium subscription, scheduled ads, and recommendation system.</p>
+  </div>
+</div>
+
+<!-- E-Learning -->
+<div class="bg-card rounded-xl overflow-hidden glow card-hover transition" data-aos="fade-left">
+  <div class="bg-black/40 flex items-center justify-center aspect-[16/9]">
+    <img src="https://source.unsplash.com/800x600/?payment,app" class="max-h-full max-w-full object-contain">
+  </div>
+  <div class="p-4">
+    <h3 class="text-primary font-bold">E-Learning Platform</h3>
+    <p>Multi-role system (Admin, Instructor, Student) with Midtrans payment integration.</p>
+  </div>
+</div>
+
+<!-- Microservices -->
+<div class="bg-card rounded-xl overflow-hidden glow card-hover transition" data-aos="fade-right">
+  <div class="bg-black/40 flex items-center justify-center aspect-[16/9]">
+    <img src="https://source.unsplash.com/800x600/?api,server" class="max-h-full max-w-full object-contain">
+  </div>
+  <div class="p-4">
+    <h3 class="text-primary font-bold">Microservices API</h3>
+    <p>Scalable API architecture using Docker and Laravel Octane.</p>
+  </div>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 max-w-5xl mx-auto px-4 text-center">
+<h2 class="text-3xl font-bold text-primary mb-6">Contact</h2>
+<p class="mb-4">Let’s collaborate or build something great together.</p>
+<p>📧 arsalfahrulloh6@gmail.com</p>
+<p>📞 +62 831-5334-2584</p>
+<p>🌐 github.com/arsalfrlh</p>
+<p>🔗 linkedin.com/in/arsal-fahrulloh-781097290</p>
+</section>
+
+<footer class="bg-black/50 py-6 text-center">
+<p>© 2026 Arsal Fahrulloh</p>
+<p class="text-sm">Laravel • Flutter • API • Microservices</p>
+</footer>
+
+<script>
+AOS.init({duration:1200, once:true});
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeBtn = document.getElementById("closeBtn");
+
+menuBtn.onclick = () => mobileMenu.classList.remove("translate-x-full");
+closeBtn.onclick = () => mobileMenu.classList.add("translate-x-full");
+
+document.querySelectorAll("#mobileMenu a").forEach(link=>{
+link.onclick = ()=> mobileMenu.classList.add("translate-x-full");
+});
+
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll("nav a");
+
+window.addEventListener("scroll",()=>{
+let current="";
+sections.forEach(section=>{
+const sectionTop=section.offsetTop-150;
+if(scrollY>=sectionTop){current=section.getAttribute("id");}
+});
+navLinks.forEach(a=>{
+a.classList.remove("nav-active");
+if(a.getAttribute("href")==="#"+current){
+a.classList.add("nav-active");
+}
+});
+});
+</script>
+
 </body>
 </html>
