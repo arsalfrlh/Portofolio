@@ -242,7 +242,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 .code-titlebar .dot{width:10px;height:10px;border-radius:50%;}
 .code-titlebar .fname{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:rgba(255,255,255,.4);}
 .code-body{padding:20px 22px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.85;min-height:210px;}
-.code-line{white-space:pre;}
+.code-line{white-space:pre-wrap;word-break:break-word;}
 .c-key{color:#7aa2ff;}
 .c-fn{color:#5bd6c4;}
 .c-str{color:#f3b94f;}
@@ -421,16 +421,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 }
 .proj-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-card-hover);}
 .proj-thumb{
-  height:132px;
-  display:flex;align-items:center;justify-content:center;
+  width:100%;
+  aspect-ratio:16/9;
+  display:block;
   position:relative;
   overflow:hidden;
+  background:#0e1430;
 }
-.proj-thumb svg{width:38px;height:38px;stroke:#fff;fill:none;stroke-width:1.6;position:relative;z-index:1;}
-.proj-thumb::before{
-  content:'';position:absolute;inset:0;
-  background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.18) 1px, transparent 0);
-  background-size:16px 16px;
+.proj-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 .proj-body{padding:18px 20px 22px;}
 .proj-cat{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.05em;text-transform:uppercase;}
@@ -583,6 +585,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
     margin:0 auto;
     animation:none;
   }
+  .code-body{font-size:11px;padding:16px 18px;line-height:1.7;}
   .stats-banner{grid-template-columns:1fr;padding:30px 22px;gap:26px;border-radius:18px;}
 }
 </style>
@@ -621,7 +624,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
   <div class="container">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow eyebrow-dark"><span class="eyebrow-dot"></span><span class="eyebrow-text">Fullstack Software Engineer · Web, Mobile & AI Systems</span></span>
+        <span class="eyebrow eyebrow-dark"><span class="eyebrow-dot"></span><span class="eyebrow-text">Fullstack Software Engineer · Web, Mobile & AI Engineer</span></span>
         <h1>Hello, I'm Arsal —<br>building scalable <span class="grad">software systems</span> for modern applications</h1>
         <p class="lead">I am a Fullstack Software Engineer from Indonesia with strong expertise in backend development using Laravel and mobile development with Flutter. I build scalable web, mobile, and backend systems, with growing specialization in AI engineering including RAG, tool calling, semantic search, and local LLM integration. I enjoy solving complex technical challenges in architecture, scalability, and real-time systems.</p>
         <div class="hero-ctas">
@@ -651,12 +654,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 
         <div class="profile-card">
           <div class="avatar-frame">
-            <img src="https://dummyimage.com/300x300/1f2937/ffffff&text=Profile" alt="Arsal Fahrulloh">
+            <img src="https://raw.githubusercontent.com/arsalfrlh/Portofolio/refs/heads/main/profile_1.png" alt="Arsal Fahrulloh">
           </div>
           <div class="p-name">Arsal Fahrulloh</div>
           <div class="p-role">FULLSTACK SOFTWARE ENGINEER</div>
           <div class="profile-badges">
-            <span>Laravel</span><span>Flutter</span><span>AI</span>
+            <span>Laravel</span><span>Flutter</span><span>AI Integration</span>
           </div>
         </div>
       </div>
@@ -946,75 +949,87 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 
     <div class="portfolio-grid">
       <div class="proj-card reveal">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#11142b,#7b5cfa)">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.1"/><path d="M19.4 13.6a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1.03 1.56v.18a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.56-1.03h-.18a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.55-1.1 1.7 1.7 0 0 0-.34-1.87l-.06-.06A2 2 0 1 1 6.91 3.5l.06.06a1.7 1.7 0 0 0 1.87.34h.07a1.7 1.7 0 0 0 1-1.55v-.18a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1.03 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87v.07a1.7 1.7 0 0 0 1.55 1h.18a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.55 1.03z"/></svg>
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">AI Platform</span>
-          <h3>AI Agent Platform with RAG & Tool Calling</h3>
-          <p>Built an AI-powered platform with local LLM deployment, RAG pipelines, semantic search, vector retrieval, and intelligent tool calling for document and web search.</p>
-          <div class="proj-stack"><span>Laravel</span><span>Python</span><span>Qdrant</span><span>PostgreSQL</span></div>
-        </div>
+        <a href="https://github.com/arsalfrlh/kwanza-ai" target="_blank">
+          <div class="proj-thumb">
+            <img src="https://github.com/arsalfrlh/kwanza-ai/raw/main/Demo/thumbnail.png" alt="AI Agent Platform with RAG & Tool Calling" loading="lazy">
+          </div>
+          <div class="proj-body">
+            <span class="proj-cat">Kwanza AI</span>
+            <h3>AI Agent Platform with RAG & Tool Calling</h3>
+            <p>Built an AI-powered platform with local LLM deployment, RAG pipelines, semantic search, vector retrieval, and intelligent tool calling for document, web search, and real-time response.</p>
+            <div class="proj-stack"><span>Laravel</span><span>Reverb Websocket</span><span>Python</span><span>Qdrant</span><span>PostgreSQL</span><span>Ollama</span></div>
+          </div>
+        </a>
       </div>
 
       <div class="proj-card reveal">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#11142b,#2f6fed)">
-          <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3.2"/><circle cx="16" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.6-6 5.5-6s5.5 2.4 5.5 6"/><path d="M10.5 20c0-3.6 2.6-6 5.5-6s5.5 2.4 5.5 6"/></svg>
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">Social Media Platform</span>
-          <h3>Real-Time Social Media Platform</h3>
-          <p>Built a scalable social media platform featuring feeds, short videos, likes, comments, follows, and real-time interactions with distributed architecture.</p>
-          <div class="proj-stack"><span>Laravel</span><span>Flutter</span><span>Reverb</span><span>MinIO</span><span>HLS</span></div>
-        </div>
+        <a href="https://github.com/arsalfrlh/social-media-app-laravel-flutter" target="_blank">
+          <div class="proj-thumb">
+            <img src="https://github.com/arsalfrlh/social-media-app-laravel-flutter/raw/main/Demo/thumb.jpg" alt="Real-Time Social Media Platform" loading="lazy">
+          </div>
+          <div class="proj-body">
+            <span class="proj-cat">Social Media Platform</span>
+            <h3>Real-Time Social Media Platform</h3>
+            <p>Built a scalable social media platform featuring feeds, short videos, likes, comments, follows, and real-time interactions with distributed architecture.</p>
+            <div class="proj-stack"><span>Laravel Octane FrankenPHP</span><span>Flutter MVVM</span><span>Reverb Websocket</span><span>MinIO</span><span>HLS</span><span>Dokcer</span><span>Redis</span></div>
+          </div>
+        </a>
       </div>
 
       <div class="proj-card reveal">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#11142b,#5bd6c4)">
-          <svg viewBox="0 0 24 24"><path d="M21 11.5c0 4.7-4 8.5-9 8.5a9.4 9.4 0 0 1-3.9-.8L3 20l1-4.2A8.4 8.4 0 0 1 3 11.5C3 6.8 7 3 12 3s9 3.8 9 8.5z"/></svg>
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">Real-Time Communication</span>
-          <h3>Real-Time Chat Application</h3>
-          <p>Developed a real-time messaging platform with WebSocket communication, event broadcasting, JWT authentication, and push notifications.</p>
-          <div class="proj-stack"><span>Laravel</span><span>Flutter</span><span>Reverb</span><span>Redis</span></div>
-        </div>
+        <a href="https://github.com/arsalfrlh/mychat-realtime-laravel-flutter" target="_blank">
+          <div class="proj-thumb">
+            <img src="https://raw.githubusercontent.com/arsalfrlh/Portofolio/main/chat.png" alt="Real-Time Chat Application" loading="lazy">
+          </div>
+          <div class="proj-body">
+            <span class="proj-cat">Real-Time Chat Communication</span>
+            <h3>Real-Time Chat Application</h3>
+            <p>Developed a real-time messaging platform with WebSocket communication, event broadcasting, JWT authentication, and push notifications.</p>
+            <div class="proj-stack"><span>Laravel</span><span>Flutter</span><span>Reverb</span><span>FCM Notifications</span></div>
+          </div>
+        </a>
       </div>
 
       <div class="proj-card reveal">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#11142b,#f5a623)">
-          <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">Music Streaming</span>
-          <h3>Music Streaming Platform</h3>
-          <p>Built a music streaming platform with HLS media pipeline, premium subscriptions, scheduled ads, and recommendation systems.</p>
-          <div class="proj-stack"><span>Laravel</span><span>Flutter</span><span>HLS</span><span>MinIO</span></div>
-        </div>
+        <a href="https://github.com/arsalfrlh/music-app-laravel-flutter" target="_blank">
+          <div class="proj-thumb">
+            <img src="https://arsalfrlh.github.io/Portofolio/musik.png" alt="Music Streaming Platform" loading="lazy">
+          </div>
+          <div class="proj-body">
+            <span class="proj-cat">Music Streaming</span>
+            <h3>Music Streaming Platform</h3>
+            <p>Built a music streaming platform with HLS media pipeline, premium subscriptions, scheduled ads, and recommendation systems.</p>
+            <div class="proj-stack"><span>Laravel Octane FrankenPHP</span><span>Flutter</span><span>AAR</span><span>HLS</span><span>AWS</span><span>EC2</span><span>CDN</span><span>S3</span></div>
+          </div>
+        </a>
       </div>
 
       <div class="proj-card reveal">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#11142b,#ff5252)">
-          <svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M2.5 4h2.6l2 11.4a1.8 1.8 0 0 0 1.78 1.5h8.34a1.8 1.8 0 0 0 1.77-1.45L20.8 8H6.1"/></svg>
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">E-Commerce</span>
-          <h3>E-Commerce Platform</h3>
-          <p>Developed a complete e-commerce system with product management, shopping cart, order processing, and payment gateway integration.</p>
-          <div class="proj-stack"><span>Laravel</span><span>Flutter</span><span>Midtrans</span></div>
-        </div>
+        <a href="https://github.com/arsalfrlh/e-commerce-laravel-flutter" target="_blank">
+          <div class="proj-thumb">
+            <img src="https://arsalfrlh.github.io/Portofolio/ecomerce.png" alt="E-Commerce Platform" loading="lazy">
+          </div>
+          <div class="proj-body">
+            <span class="proj-cat">E-Commerce</span>
+            <h3>E-Commerce Platform</h3>
+            <p>Developed a complete e-commerce system with product management, shopping cart, order processing, and payment gateway integration.</p>
+            <div class="proj-stack"><span>Laravel</span><span>Flutter</span><span>Midtrans</span></div>
+          </div>
+        </a>
       </div>
 
       <div class="proj-card reveal">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#11142b,#a78bfa)">
-          <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        </div>
-        <div class="proj-body">
-          <span class="proj-cat">E-Learning</span>
-          <h3>Multi-Role Learning Platform</h3>
-          <p>Built an online learning platform with role-based access for admins, instructors, and students with integrated payment systems.</p>
-          <div class="proj-stack"><span>Laravel</span><span>Flutter</span><span>Midtrans</span></div>
-        </div>
+        <a href="https://github.com/arsalfrlh/e-learning-app-laravel-flutter" target="_blank">
+          <div class="proj-thumb">
+            <img src="https://arsalfrlh.github.io/Portofolio/elearning.png" alt="Multi-Role Learning Platform" loading="lazy">
+          </div>
+          <div class="proj-body">
+            <span class="proj-cat">E-Learning</span>
+            <h3>Multi-Role Learning Platform</h3>
+            <p>Built an online learning platform with role-based access for admins, instructors, and students with integrated payment systems.</p>
+            <div class="proj-stack"><span>Laravel</span><span>Flutter</span><span>Xendit</span></div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
