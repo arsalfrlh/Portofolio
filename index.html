@@ -718,6 +718,166 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
   .kwa-messages{padding:14px 11px 10px;}
 }
 
+/* Markdown formatting inside Kwanza AI messages */
+.kwa-bubble {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.kwa-bubble > :first-child {
+  margin-top: 0;
+}
+
+.kwa-bubble > :last-child {
+  margin-bottom: 0;
+}
+
+.kwa-bubble h1,
+.kwa-bubble h2,
+.kwa-bubble h3,
+.kwa-bubble h4,
+.kwa-bubble h5,
+.kwa-bubble h6 {
+  color: #ffffff;
+  line-height: 1.4;
+  margin: 14px 0 7px;
+  font-weight: 700;
+}
+
+.kwa-bubble h1 { font-size: 17px; }
+.kwa-bubble h2 { font-size: 15.5px; }
+.kwa-bubble h3 { font-size: 14px; }
+.kwa-bubble h4,
+.kwa-bubble h5,
+.kwa-bubble h6 { font-size: 13px; }
+
+.kwa-bubble p {
+  margin: 0 0 10px;
+  line-height: 1.7;
+}
+
+.kwa-bubble ul,
+.kwa-bubble ol {
+  margin: 7px 0 12px;
+  padding-left: 21px;
+}
+
+.kwa-bubble ul {
+  list-style: disc;
+}
+
+.kwa-bubble ol {
+  list-style: decimal;
+}
+
+.kwa-bubble li {
+  padding-left: 3px;
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+.kwa-bubble li::marker {
+  color: #8db8ff;
+}
+
+.kwa-bubble strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.kwa-bubble em {
+  color: #d5ddff;
+}
+
+.kwa-bubble a {
+  color: #8db8ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+
+.kwa-bubble code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  background: rgba(255, 255, 255, .09);
+  padding: 2px 5px;
+  border-radius: 5px;
+  overflow-wrap: anywhere;
+}
+
+.kwa-bubble pre {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 10px 0;
+  padding: 12px;
+  background: #080d20;
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 10px;
+  white-space: pre;
+}
+
+.kwa-bubble pre code {
+  display: block;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  white-space: pre;
+  overflow-wrap: normal;
+  line-height: 1.65;
+}
+
+.kwa-bubble blockquote {
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-left: 3px solid #7194ff;
+  background: rgba(91, 157, 255, .08);
+  color: #cbd5f5;
+  border-radius: 0 8px 8px 0;
+}
+
+.kwa-bubble blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.kwa-bubble hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  margin: 14px 0;
+}
+
+.kwa-bubble table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 11.5px;
+}
+
+.kwa-bubble th,
+.kwa-bubble td {
+  padding: 8px 10px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, .13);
+  white-space: normal;
+  min-width: 70px;
+}
+
+.kwa-bubble th {
+  background: rgba(91, 157, 255, .13);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.kwa-bubble td {
+  color: #dce4ff;
+}
+
+.kwa-bubble tr:nth-child(even) td {
+  background: rgba(255, 255, 255, .025);
+}
 </style>
 </head>
 <body>
@@ -1388,6 +1548,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 </div>
 
 <script>
+<script src="https://cdn.jsdelivr.net/npm/marked@18.1.1/lib/marked.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.4.16/dist/purify.min.js"></script>
 // ----- header scroll state -----
 const header = document.getElementById('siteHeader');
 window.addEventListener('scroll', () => {
@@ -1528,14 +1690,14 @@ typeNext();
   }
 
   // Small safe Markdown subset: bold, inline code, and http(s) links.
-  function renderMessageText(value) {
-    let html = escapeHtml(value);
-    html = html.replace(/`([^`\n]+)`/g, "<code>$1</code>");
-    html = html.replace(/\*\*([^*\n]+)\*\*/g, "<strong>$1</strong>");
-    html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
-      '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
-    return html;
-  }
+function renderMessageText(value) {
+  const markdown = String(value ?? "");
+  const html = marked.parse(markdown, {
+    gfm: true,
+    breaks: true
+  });
+  return DOMPurify.sanitize(html);
+}
 
   function scrollToBottom() {
     messagesElement.scrollTop = messagesElement.scrollHeight;
